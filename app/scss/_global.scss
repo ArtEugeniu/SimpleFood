@@ -1,3 +1,18 @@
+body {
+  margin: 0;
+  background-color: #F9FAFF;
+  font-size: 20px;
+  line-height: 1.5;
+  @extend %rubik-400;
+  color: $dark;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -9,4 +24,45 @@
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.animation {
+  border-radius: 5px;
+  transition: box-shadow 0.4s, background-color 0.4s, color 0.4s, text-decoration 0.4s, opacity 0.4s, stroke 0.4s, text-shadow 0.4s, fill 0.4s;
+}
+
+.animation:focus {
+  box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7); 
+}
+
+.animation:hover {
+  color: $orange;
+  text-decoration: transparent;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.animation:active {
+  text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+  color: $dark;
+}
+
+.link-animation {
+  color: $darkBlue;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.link-animation:focus {
+  text-decoration: transparent;
+}
+
+.link-animation:active {
+  color: $darkBlue;
+  text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+}
+
+.title {
+  @extend %rubik-500;
+  font-size: 36px;
+  color: $darkBlue;
 }
