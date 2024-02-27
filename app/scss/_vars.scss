@@ -1,21 +1,29 @@
-$orange: #FF6838;
+$brand-color: #FF6838;
 $silver1: #ECECEC;
 $silver2: #F9FAFF;
 $gray: #C2C2C2;
 $darkBlue: #363853;
 $dark: #31352B;
+$white: #fff;
+$black: #000;
 
 %rubik-300 {
-  font-family: 'Rubik-Light';
+  font-family: 'Rubik', sans-serif;
   font-weight: 300;
 }
 
 %rubik-400 {
-  font-family: 'Rubik-Regular';
+  font-family: 'Rubik', sans-serif;
   font-weight: 400;
 }
 
 %rubik-500 {
-  font-family: 'Rubik-Medium';
+  font-family: 'Rubik', sans-serif;
   font-weight: 500;
+}
+
+%rubik-italic {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
