@@ -6,6 +6,20 @@ $darkBlue: #363853;
 $dark: #31352B;
 $white: #fff;
 $black: #000;
+$text-shadow: #31352b80;
+
+$breakpoints: (
+  "phone": 560px,
+  "tablet": 768px,
+  "tablet-2": 992px,
+  "desktop": 1200px
+);
+
+%background-pseudo {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 %rubik-300 {
   font-family: 'Rubik', sans-serif;

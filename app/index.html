@@ -18,11 +18,69 @@
 <body>
 
   <header class="header">
+    <div class="mobile-menu">
+      <button class="mobile-menu__button" type="button"></button>
+      <a class="logo header__logo mobile-menu__logo animation" href="#">
+        <img class="logo__img" src="images/logo.svg" alt="лого" width="200" height="40">
+      </a>
+      <ul class="menu">
+        <li class="menu__item">
+          <a class="menu__link menu__link--active text-animation" href="#">Главная</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link text-animation" href="#">Блюда</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link text-animation" href="#">Контакты</a>
+        </li>
+      </ul>
+      <address class="contacts">
+        <ul class="feedback mobile-menu__feedback">
+          <li class="feedback__info">
+            <a class="feedback__link feedback__link--location text-animation" href="#" target="_blank"
+              rel="noreferrer">ул. Т.Г.Шевченко, 1</a>
+          </li>
+          <li class="feedback__info">
+            <a class="feedback__link feedback__link--tel text-animation" href="tel:+380501112233">380501112233</a>
+          </li>
+          <li class="feedback__info">
+            <a class="feedback__link feedback__link--email text-animation" href="mailto:support@sfood.com"
+              target="_blank" rel="noreferrer">support@sfood.com</a>
+          </li>
+        </ul>
+        <ul class="social-media mobile-menu__social-media">
+          <li class="social-media__item">
+            <a class="social-media__link" href="#" target="_blank" rel="noreferrer">
+              <svg class="social-media__svg social-media__svg--facebook">
+                <use xlink:href="images/sprite.svg#icon-facebook"></use>
+              </svg>
+              <span class="sr-only">наш фейсбук</span>
+            </a>
+          </li>
+          <li class="social-media__item">
+            <a class="social-media__link" href="#" target="_blank" rel="noreferrer">
+              <svg class="social-media__svg social-media__svg--twitter">
+                <use xlink:href="images/sprite.svg#icon-twitter"></use>
+              </svg>
+              <span class="sr-only">наш твиттер</span>
+            </a>
+          </li>
+          <li class="social-media__item">
+            <a class="social-media__link" href="#" target="_blank" rel="noreferrer">
+              <svg class="social-media__svg social-media__svg--instagram">
+                <use xlink:href="images/sprite.svg#icon-instagram"></use>
+              </svg>
+              <span class="sr-only">наш инстаграм</span>
+            </a>
+          </li>
+        </ul>
+      </address>
+    </div>
     <div class="header__top">
       <div class="container">
         <nav class="nav">
           <a class="logo header__logo animation" href="#">
-            <img class="logo__img" src="images/logo.svg" alt="лого">
+            <img class="logo__img" src="images/logo.svg" alt="лого" width="200" height="40">
           </a>
           <ul class="menu">
             <li class="menu__item">
@@ -54,18 +112,20 @@
               </button>
             </li>
           </ul>
+          <button class="burger">
+            <span class="burger__line"></span>
+          </button>
         </nav>
-
       </div>
     </div>
   </header>
 
   <main class="main">
-    <div class="hero">
+    <section class="hero">
       <div class="container">
         <h1 class="sr-only">Сайт сервиса доставки еды Simple Food</h1>
-        <div class="hero-wrapper">
-          <div class="hero-text">
+        <div class="hero__wrapper">
+          <div class="hero__content">
             <h2 class="hero__title">
               Доставка
               <span class="hero__title-time">за 15 минут</span>
@@ -85,14 +145,14 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <section class="popular-category">
       <div class="container">
         <h2 class="title popular-category__title">Популярные категории</h2>
         <ul class="popular-category__filter">
           <li class="popular-category__filter-item">
-            <button class="popular-category__btn mixitup-control-active" type="button" data-filter=".category-burger">
+            <button class="popular-category__btn mixitup-control-active" type="button" data-filter="all">
               <svg class="popular-category__svg">
                 <use xlink:href="images/sprite.svg#icon-burger"></use>
               </svg>
@@ -236,7 +296,7 @@
             </article>
           </li>
         </ul>
-        <a class="category__link text-animation text-decoration" href="#">Показать еще</a>
+        <a class="popular-category__link text-animation text-decoration" href="#">Показать еще</a>
       </div>
     </section>
 
@@ -274,137 +334,189 @@
 
     <section class="resto">
       <div class="container">
-        <h1 class="title resto__title">
+        <h2 class="title resto__title">
           Лучшие рестораны
-        </h1>
+        </h2>
         <ul class="resto__items">
           <li class="resto__item">
             <article class="resto-card">
               <img class="resto-card__img" src="images/blaze-pizza.jpeg" alt="фото пиццы">
-              <h3 class="resto-card__title">Blaze Pizza</h3>
-              <span class="resto-card__time">11:00 - 22:00</span>
-              <a class="resto-card__link button-animation" href="#">
-                <svg class="resto-card__svg">
-                  <use xlink:href="images/sprite.svg#icon-arrow"></use>
-                </svg>
-              </a>
+              <div class="resto-card__wrapper">
+                <h3 class="resto-card__title">Blaze Pizza</h3>
+                <div class="resto-card__inner">
+                  <span class="resto-card__time">11:00 - 22:00</span>
+                  <a class="resto-card__link button-animation" href="#">
+                    <svg class="resto-card__svg">
+                      <use xlink:href="images/sprite.svg#icon-arrow"></use>
+                    </svg>
+                    <span class="sr-only">Перейти к странице ресторана blaze-pizza</span>
+                  </a>
+                </div>
+              </div>
             </article>
           </li>
           <li class="resto__item">
             <article class="resto-card">
               <img class="resto-card__img" src="images/pizza-runcho.jpeg" alt="фото пиццы">
-              <h3 class="resto-card__title">Pizza Runcho</h3>
-              <span class="resto-card__time">12:00 - 21:00</span>
-              <a class="resto-card__link button-animation" href="#">
-                <svg class="resto-card__svg">
-                  <use xlink:href="images/sprite.svg#icon-arrow"></use>
-                </svg>
-              </a>
+              <div class="resto-card__wrapper">
+                <h3 class="resto-card__title">Pizza Runcho</h3>
+                <div class="resto-card__inner">
+                  <span class="resto-card__time">12:00 - 21:00</span>
+                  <a class="resto-card__link button-animation" href="#">
+                    <svg class="resto-card__svg">
+                      <use xlink:href="images/sprite.svg#icon-arrow"></use>
+                    </svg>
+                    <span class="sr-only">Перейти к странице ресторана pizza-runcho</span>
+                  </a>
+                </div>
+              </div>
             </article>
           </li>
           <li class="resto__item">
             <article class="resto-card">
               <img class="resto-card__img" src="images/pizza-hut.jpeg" alt="фото пиццы">
-              <h3 class="resto-card__title">Pizza Hut</h3>
-              <span class="resto-card__time">11:00 - 22:00</span>
-              <a class="resto-card__link button-animation" href="#">
-                <svg class="resto-card__svg">
-                  <use xlink:href="images/sprite.svg#icon-arrow"></use>
-                </svg>
-              </a>
+              <div class="resto-card__wrapper">
+                <h3 class="resto-card__title">Pizza Hut</h3>
+                <div class="resto-card__inner">
+                  <span class="resto-card__time">11:00 - 22:00</span>
+                  <div class="resto-card__inner">
+                    <a class="resto-card__link button-animation" href="#">
+                      <svg class="resto-card__svg">
+                        <use xlink:href="images/sprite.svg#icon-arrow"></use>
+                      </svg>
+                      <span class="sr-only">Перейти к странице ресторана pizza-hut</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </article>
           </li>
           <li class="resto__item">
             <article class="resto-card">
               <img class="resto-card__img" src="images/mcdo.jpeg" alt="фото бургера">
-              <h3 class="resto-card__title">McDonald`s</h3>
-              <span class="resto-card__time">06:00 - 23:00</span>
-              <a class="resto-card__link button-animation" href="#">
-                <svg class="resto-card__svg">
-                  <use xlink:href="images/sprite.svg#icon-arrow"></use>
-                </svg>
-              </a>
+              <div class="resto-card__wrapper">
+                <h3 class="resto-card__title">McDonald`s</h3>
+                <div class="resto-card__inner">
+                  <span class="resto-card__time">06:00 - 23:00</span>
+                  <a class="resto-card__link button-animation" href="#">
+                    <svg class="resto-card__svg">
+                      <use xlink:href="images/sprite.svg#icon-arrow"></use>
+                    </svg>
+                    <span class="sr-only">Перейти к странице ресторана McDonald's</span>
+                  </a>
+                </div>
+              </div>
             </article>
           </li>
           <li class="resto__item">
             <article class="resto-card">
               <img class="resto-card__img" src="images/kfc.jpeg" alt="фото бургера">
-              <h3 class="resto-card__title">KFC</h3>
-              <span class="resto-card__time">06:00 - 23:30</span>
-              <a class="resto-card__link button-animation" href="#">
-                <svg class="resto-card__svg">
-                  <use xlink:href="images/sprite.svg#icon-arrow"></use>
-                </svg>
-              </a>
+              <div class="resto-card__wrapper">
+                <h3 class="resto-card__title">KFC</h3>
+                <div class="resto-card__inner">
+                  <span class="resto-card__time">06:00 - 23:30</span>
+                  <a class="resto-card__link button-animation" href="#">
+                    <svg class="resto-card__svg">
+                      <use xlink:href="images/sprite.svg#icon-arrow"></use>
+                    </svg>
+                    <span class="sr-only">Перейти к странице ресторана KFC</span>
+                  </a>
+                </div>
+              </div>
             </article>
           </li>
           <li class="resto__item">
             <article class="resto-card">
               <img class="resto-card__img" src="images/starburger.jpeg" alt="фото бургера">
-              <h3 class="resto-card__title">Star Burgers</h3>
-              <span class="resto-card__time">09:00 - 21:00</span>
-              <a class="resto-card__link button-animation" href="#">
-                <svg class="resto-card__svg">
-                  <use xlink:href="images/sprite.svg#icon-arrow"></use>
-                </svg>
-              </a>
+              <div class="resto-card__wrapper">
+                <h3 class="resto-card__title">Star Burgers</h3>
+                <div class="resto-card__inner">
+                  <span class="resto-card__time">09:00 - 21:00</span>
+                  <a class="resto-card__link button-animation" href="#">
+                    <svg class="resto-card__svg">
+                      <use xlink:href="images/sprite.svg#icon-arrow"></use>
+                    </svg>
+                    <span class="sr-only">Перейти к странице ресторана Star Burgers</span>
+                  </a>
+                </div>
+              </div>
             </article>
           </li>
         </ul>
       </div>
     </section>
 
-    <section class="reviews">
+   <section class="reviews">
       <div class="container">
         <h2 class=" title reviews__title">Отзывы клиентов</h2>
-        <ul class="reviews-slider">
-          <li class="reviews-slider__item">
-            <div class="reviews-slider__img" style="background-image: url(images/slider-img.jpeg);"></div>
-            <figure class="reviews-slider__comment">
-              <blockquote class="reviews-slider__cite">
-                SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе. Очень удобный сайт и
-                приложение. Их доставщики очень вежливы и пунктуальны. Компания часто проводит акции и дарит скидки на
-                доставку - однозначно рекомендую!
-              </blockquote>
-              <figcaption class="reviews-slider__author">Дарья</figcaption>
-              <span class="reviews-slider__note">Ценитель вкусной еды</span>
-            </figure>
+        <ul class="reviews__slider">
+          <li class="reviews__slider-item">
+            <div class="reviews__slider-inner">
+              <div class="reviews__slider-image">
+                <img class="reviews__slider-img" src="images/slider-img.jpeg" alt="Фото клиента">
+              </div>
+              <figure class="reviews__slider-comment">
+                <blockquote class="reviews__slider-cite">
+                  SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе. Очень удобный сайт и
+                  приложение. Их доставщики очень вежливы и пунктуальны. Компания часто проводит акции и дарит скидки на
+                  доставку - однозначно рекомендую!
+                </blockquote>
+                <figcaption class="reviews__slider-author">Дарья
+                  <span class="reviews__slider-note">Ценитель вкусной еды</span>
+                </figcaption>
+              </figure>
+            </div>
           </li>
-          <li class="reviews-slider__item">
-            <div class="reviews-slider__img" style="background-image: url(images/slider-img.jpeg);"></div>
-            <figure class="reviews-slider__comment">
-              <blockquote class="reviews-slider__cite">
-                SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе. Очень удобный сайт и
-                приложение. Их доставщики очень вежливы и пунктуальны. Компания часто проводит акции и дарит скидки на
-                доставку - однозначно рекомендую!
-              </blockquote>
-              <figcaption class="reviews-slider__author">Дарья</figcaption>
-              <span class="reviews-slider__note">Ценитель вкусной еды</span>
-            </figure>
+          <li class="reviews__slider-item">
+            <div class="reviews__slider-inner">
+              <div class="reviews__slider-image">
+                <img class="reviews__slider-img" src="images/slider-img.jpeg" alt="Фото клиента">
+              </div>
+              <figure class="reviews__slider-comment">
+                <blockquote class="reviews__slider-cite">
+                  SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе. Очень удобный сайт и
+                  приложение. Их доставщики очень вежливы и пунктуальны. Компания часто проводит акции и дарит скидки на
+                  доставку - однозначно рекомендую!
+                </blockquote>
+                <figcaption class="reviews__slider-author">Дарья
+                  <span class="reviews__slider-note">Ценитель вкусной еды</span>
+                </figcaption>
+              </figure>
+            </div>
           </li>
-          <li class="reviews-slider__item">
-            <div class="reviews-slider__img" style="background-image: url(images/slider-img.jpeg);"></div>
-            <figure class="reviews-slider__comment">
-              <blockquote class="reviews-slider__cite">
-                SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе. Очень удобный сайт и
-                приложение. Их доставщики очень вежливы и пунктуальны. Компания часто проводит акции и дарит скидки на
-                доставку - однозначно рекомендую!
-              </blockquote>
-              <figcaption class="reviews-slider__author">Дарья</figcaption>
-              <span class="reviews-slider__note">Ценитель вкусной еды</span>
-            </figure>
+          <li class="reviews__slider-item">
+            <div class="reviews__slider-inner">
+              <div class="reviews__slider-image">
+                <img class="reviews__slider-img" src="images/slider-img.jpeg" alt="Фото клиента">
+              </div>
+              <figure class="reviews__slider-comment">
+                <blockquote class="reviews__slider-cite">
+                  SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе. Очень удобный сайт и
+                  приложение. Их доставщики очень вежливы и пунктуальны. Компания часто проводит акции и дарит скидки на
+                  доставку - однозначно рекомендую!
+                </blockquote>
+                <figcaption class="reviews__slider-author">Дарья
+                  <span class="reviews__slider-note">Ценитель вкусной еды</span>
+                </figcaption>
+              </figure>
+            </div>
           </li>
-          <li class="reviews-slider__item">
-            <div class="reviews-slider__img" style="background-image: url(images/slider-img.jpeg);"></div>
-            <figure class="reviews-slider__comment">
-              <blockquote class="reviews-slider__cite">
-                SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе. Очень удобный сайт и
-                приложение. Их доставщики очень вежливы и пунктуальны. Компания часто проводит акции и дарит скидки на
-                доставку - однозначно рекомендую!
-              </blockquote>
-              <figcaption class="reviews-slider__author">Дарья</figcaption>
-              <span class="reviews-slider__note">Ценитель вкусной еды</span>
-            </figure>
+          <li class="reviews__slider-item">
+            <div class="reviews__slider-inner">
+              <div class="reviews__slider-image">
+                <img class="reviews__slider-img" src="images/slider-img.jpeg" alt="Фото клиента">
+              </div>
+              <figure class="reviews__slider-comment">
+                <blockquote class="reviews__slider-cite">
+                  SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе. Очень удобный сайт и
+                  приложение. Их доставщики очень вежливы и пунктуальны. Компания часто проводит акции и дарит скидки на
+                  доставку - однозначно рекомендую!
+                </blockquote>
+                <figcaption class="reviews__slider-author">Дарья
+                  <span class="reviews__slider-note">Ценитель вкусной еды</span>
+                </figcaption>
+              </figure>
+            </div>
           </li>
         </ul>
         <div class="arrows-wrap"></div>
@@ -423,14 +535,16 @@
             </p>
             <div class="app__icons">
               <a class="app__link" href="#">
-                <img class="app__icon" src="images/icons/apple.svg" alt="Ссылка приложения для apple">
+                <img class="app__icon" src="images/icons/apple.svg" alt="Ссылка приложения для apple" width="120" height="40">
               </a>
               <a class="app__link" href="#">
-                <img class="app__icon" src="images/icons/android.svg" alt="Ссылка приложения для android">
+                <img class="app__icon" src="images/icons/android.svg" alt="Ссылка приложения для android" width="135" height="40">
               </a>
             </div>
           </div>
-          <div class="app__img" style="background-image: url(images/app-img.jpeg);"></div>
+          <div class="app__img" style="background-image: url(images/app-img.jpeg);">
+            <span class="sr-only">Фото мобильного приложения Simple Food</span>
+          </div>
         </div>
       </div>
     </section>
@@ -492,60 +606,44 @@
               <a class="footer__link text-animation" href="#">Что нового?</a>
             </li>
             <li class="footer__item">
-              <a class="footer__link text-animation" href="#">Карта сайта
-              </a>
+              <a class="footer__link text-animation" href="#">Карта сайта</a>
             </li>
           </ul>
         </nav>
         <address class="contacts">
           <ul class="feedback">
             <li class="feedback__info">
-              <a class="feedback__link feedback__link--location text-animation" href="#">ул. Т.Г.Шевченко, 1</a>
+              <a class="feedback__link feedback__link--location text-animation" href="#" target="_blank" rel="noreferrer">ул. Т.Г.Шевченко, 1</a>
             </li>
             <li class="feedback__info">
               <a class="feedback__link feedback__link--tel text-animation" href="tel:+380501112233">380501112233</a>
             </li>
             <li class="feedback__info">
               <a class="feedback__link feedback__link--email text-animation"
-                href="mailto:support@sfood.com">support@sfood.com</a>
+                href="mailto:support@sfood.com" target="_blank" rel="noreferrer">support@sfood.com</a>
             </li>
           </ul>
           <ul class="social-media">
             <li class="social-media__item">
-              <a class="social-media__link" href="#">
-                <svg width="39.000000" height="39.000000" viewBox="0 0 39 39" fill="none"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <circle class="svg-animation" id="Ellipse 4" cx="19.500000" cy="19.500000" r="19.500000"
-                    fill="#ECECEC" fill-opacity="1.000000" />
-                  <path class="svg-animation" id="ic-facebook"
-                    d="M17.5468 29.5264L17.5468 19.8948L15 19.8948L15 16.427L17.5468 16.427L17.5468 13.4651C17.5468 11.1375 19.0511 9 22.5176 9C23.9211 9 24.959 9.13452 24.959 9.13452L24.8772 12.3728C24.8772 12.3728 23.8188 12.3625 22.6638 12.3625C21.4137 12.3625 21.2134 12.9387 21.2134 13.8948L21.2134 16.427L24.9766 16.427L24.8128 19.8948L21.2134 19.8948L21.2134 29.5264L17.5468 29.5264Z"
-                    fill="#31352B" fill-opacity="1.000000" fill-rule="nonzero" />
+              <a class="social-media__link" href="#" target="_blank" rel="noreferrer">
+                <svg class="social-media__svg social-media__svg--facebook">
+                  <use xlink:href="images/sprite.svg#icon-facebook"></use>
                 </svg>
                 <span class="sr-only">наш фейсбук</span>
               </a>
             </li>
             <li class="social-media__item">
-              <a class="social-media__link" href="#">
-                <svg width="39.000000" height="39.000000" viewBox="0 0 39 39" fill="none"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <circle class="svg-animation" id="Ellipse 4" cx="19.500000" cy="19.500000" r="19.500000"
-                    fill="#ECECEC" fill-opacity="1.000000" />
-                  <path class="svg-animation" id="ic-twitter"
-                    d="M29.5263 12.981C28.7715 13.3064 27.95 13.5408 27.1039 13.6321C27.9824 13.1101 28.6402 12.2856 28.954 11.3132C28.1297 11.8037 27.2266 12.1475 26.2849 12.3296C25.8914 11.9089 25.4153 11.5737 24.8865 11.345C24.3577 11.1162 23.7875 10.9988 23.2113 11C20.8801 11 19.0054 12.8896 19.0054 15.2085C19.0054 15.5339 19.0449 15.8596 19.109 16.1729C15.6185 15.9905 12.5053 14.3228 10.4357 11.7698C10.0586 12.4138 9.86096 13.1472 9.8634 13.8936C9.8634 15.354 10.6059 16.6416 11.7382 17.3989C11.0709 17.3726 10.4193 17.1892 9.83624 16.8635L9.83624 16.9155C9.83624 18.9604 11.2818 20.655 13.2084 21.0449C12.8466 21.1389 12.4745 21.1868 12.1008 21.188C11.827 21.188 11.5679 21.1609 11.3065 21.1238C11.8393 22.7913 13.3909 24.0024 15.2386 24.042C13.793 25.1743 11.9824 25.8403 10.0163 25.8403C9.66357 25.8403 9.33795 25.8279 9 25.7886C10.8649 26.9849 13.0776 27.6755 15.4606 27.6755C23.1965 27.6755 27.4295 21.2668 27.4295 15.7041C27.4295 15.5217 27.4295 15.3391 27.4172 15.1565C28.2361 14.5571 28.954 13.8147 29.5263 12.981Z"
-                    fill="#31352B" fill-opacity="1.000000" fill-rule="nonzero" />
+              <a class="social-media__link" href="#" target="_blank" rel="noreferrer">
+                <svg class="social-media__svg social-media__svg--twitter">
+                  <use xlink:href="images/sprite.svg#icon-twitter"></use>
                 </svg>
                 <span class="sr-only">наш твиттер</span>
               </a>
             </li>
             <li class="social-media__item">
-              <a class="social-media__link" href="#">
-                <svg width="39.000000" height="39.000000" viewBox="0 0 39 39" fill="none"
-                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <circle class="svg-animation" id="Ellipse 4" cx="19.500000" cy="19.500000" r="19.500000"
-                    fill="#ECECEC" fill-opacity="1.000000" />
-                  <path class="svg-animation" id="ic-instagram"
-                    d="M19.7476 16.4985C17.9572 16.4985 16.4962 17.9597 16.4962 19.75C16.4962 21.5403 17.9572 23.0015 19.7476 23.0015C21.5379 23.0015 22.999 21.5403 22.999 19.75C22.999 17.9597 21.5379 16.4985 19.7476 16.4985ZM29.4993 19.75C29.4993 18.4036 29.5115 17.0693 29.4359 15.7253C29.3602 14.1643 29.0042 12.7788 27.8626 11.6375C26.7186 10.4934 25.3356 10.1396 23.7746 10.0642C22.4282 9.98853 21.094 10.0007 19.75 10.0007C18.4036 10.0007 17.0694 9.98853 15.7254 10.0642C14.1644 10.1396 12.7789 10.4958 11.6374 11.6375C10.4934 12.7812 10.1398 14.1643 10.0641 15.7253C9.98853 17.0718 10.0007 18.406 10.0007 19.75C10.0007 21.094 9.98853 22.4307 10.0641 23.7747C10.1398 25.3357 10.4958 26.7212 11.6374 27.8625C12.7814 29.0066 14.1644 29.3604 15.7254 29.4358C17.0718 29.5115 18.406 29.4993 19.75 29.4993C21.0964 29.4993 22.4306 29.5115 23.7746 29.4358C25.3356 29.3604 26.7211 29.0042 27.8626 27.8625C29.0066 26.7188 29.3602 25.3357 29.4359 23.7747C29.5139 22.4307 29.4993 21.0964 29.4993 19.75ZM19.7476 24.7527C16.9791 24.7527 14.7449 22.5186 14.7449 19.75C14.7449 16.9814 16.9791 14.7473 19.7476 14.7473C22.516 14.7473 24.7502 16.9814 24.7502 19.75C24.7502 22.5186 22.516 24.7527 19.7476 24.7527ZM24.9551 15.7107C24.3088 15.7107 23.7868 15.1887 23.7868 14.5425C23.7868 13.896 24.3088 13.374 24.9551 13.374C25.6015 13.374 26.1235 13.896 26.1235 14.5425C26.1237 14.6958 26.0936 14.8479 26.035 14.9897C25.9763 15.1316 25.8903 15.2605 25.7817 15.3689C25.6732 15.4775 25.5443 15.5635 25.4025 15.6223C25.2606 15.6809 25.1086 15.7109 24.9551 15.7107Z"
-                    fill="#31352B" fill-opacity="1.000000" fill-rule="nonzero" />
+              <a class="social-media__link" href="#" target="_blank" rel="noreferrer">
+                <svg class="social-media__svg social-media__svg--instagram">
+                  <use xlink:href="images/sprite.svg#icon-instagram"></use>
                 </svg>
                 <span class="sr-only">наш инстаграм</span>
               </a>
@@ -560,9 +658,9 @@
       </div>
     </div>
   </footer>
-
-
-  <script src="js/main.min.js"></script>
+  
+  
+    <script src="js/main.min.js"></script>
 </body>
 
 </html>

@@ -3,11 +3,108 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  } @else {
+  }
+
+  @else {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: $lines;
     -webkit-box-orient: vertical;
+  }
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+
+    @if $type ==max {
+      $width: $width - 1px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+@mixin burger {
+  width: 30px;
+  height: 20px;
+  color: $darkBlue;
+  position: relative;
+  padding: 11px 0;
+
+  &__line {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $darkBlue;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::after,
+  &::before {
+    @include pseudo;
+    width: 100%;
+    height: 2px;
+    background-color: $darkBlue;
+  }
+
+  &::after {
+    top: 0;
+  }
+
+  &::before {
+    bottom: 0;
+  }
+}
+
+@mixin dots {
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 35px;
+    left: 1px;
+
+    & li:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    & button {
+      font-size: 0;
+      width: 15px;
+      height: 15px;
+      background-color: $gray;
+      border-radius: 50%;
+      transition: box-shadow 0.25s, background-color 0.25s;
+    }
+
+    & button:focus {
+      box-shadow: 0 0 0 2px $brand-color;
+    }
+
+    & button:hover {
+      box-shadow: 0 0 0 2px rgba($brand-color, 0.7);
+      background-color: rgb(255, 242, 237);
+    }
+
+    & button:active {
+      background-color: rgb(255, 174, 148);
+      box-shadow: 0 0 0 2px transparent;
+    }
+
+    & .slick-active button {
+      background-color: $brand-color;
+    }
   }
 }

@@ -1,10 +1,23 @@
 body {
   margin: 0;
-  background-color: #F9FAFF;
+  background-color: $silver2;
   font-size: 20px;
   line-height: 1.5;
   @extend %rubik-400;
   color: $dark;
+}
+
+.lock {
+  overflow: hidden;
+  position: relative;
+  &::after {
+    @include pseudo;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.5);
+  }
 }
 
 .container {
@@ -32,15 +45,16 @@ body {
 }
 
 .text-animation:focus {
-  box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+  box-shadow: 0 0 0 2px rgba($brand-color, 0.7);
 }
 
 .text-animation:hover {
   color: $brand-color;
+  text-decoration: transparent;
 }
 
 .text-animation:active {
-  text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+  text-shadow: 2px 2px 5px $text-shadow;
   color: $darkBlue;
 }
 
@@ -51,19 +65,19 @@ body {
 
 .button-animation {
   background-color: $brand-color;
-  color: #fff;
+  color: $white;
   border-radius: 6px;
   transition: box-shadow 0.4s, background-color 0.4s, color 0.4s;
 }
 
 .button-animation:focus {
-  box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-  background-color: rgba(255, 122, 80, 0.1);
+  box-shadow: 0 0 0 2px rgba($brand-color, 0.7);
+  background-color: rgba(255, 118, 77, 0.1);
   color: $brand-color;
 }
 
 .button-animation:hover {
-  box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+  box-shadow: 0 0 0 2px rgba($brand-color, 0.7);
   background-color: rgba(255, 255, 255, 0.1);
   color: $brand-color;
 }
@@ -82,4 +96,8 @@ body {
   @extend %rubik-500;
   font-size: 36px;
   color: $darkBlue;
+
+  @include mq('phone') {
+    font-size: 24px;
+  }
 }
