@@ -20,8 +20,11 @@
     "gulp-svg-sprite": "^2.0.3",
     "gulp-uglify": "^3.0.2",
     "jquery": "^3.7.1",
+    "magnific-popup": "^1.1.0",
     "mixitup": "^3.3.1",
-    "sass": "^1.70.0"
+    "rateyo": "^2.3.2",
+    "sass": "^1.70.0",
+    "swiper": "^11.0.7"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
@@ -29,7 +32,6 @@
     "ion-rangeslider": "^2.3.1",
     "jquery-form-styler": "^2.0.2",
     "slick-carousel": "^1.8.1",
-    "slick-slider": "^1.8.2",
-    "swiper": "^11.0.7"
+    "slick-slider": "^1.8.2"
   }
 }
